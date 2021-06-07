@@ -1,3 +1,15 @@
+
+let getNumberN = Number(prompt("Put your number N here", "Number N")); //Отримайте у користувача число(N) від якого ми будемо складати
+
+console.log(Number.isInteger(getNumberN)); // чи є передане значення N ЦІЛИМ числом
+
+let getNumberM = Number(prompt("Put your number M here", "Number M")); //Отримайте у користувача число(M) до якого ми будемо складати (включно)
+
+console.log(Number.isInteger(getNumberM)); //чи є передане значення M ЦІЛИМ числом
+
+let isEvenPass = confirm("To pass event?"); //чи потрібно пропускати парні числа
+console.log(isEvenPass);
+
 /* 
 const product =  prompt('What do You want to buy?');
 
@@ -200,16 +212,6 @@ if(wafflesJam || pastaWithCheeseSouce) {
 } */
 
 
-let getNumberN = Number(prompt("Put your number N here", "Number N")); //Отримайте у користувача число(N) від якого ми будемо складати
-
-console.log(Number.isInteger(getNumberN)); // чи є передане значення N ЦІЛИМ числом
-
-let getNumberM = Number(prompt("Put your number M here", "Number M")); //Отримайте у користувача число(M) до якого ми будемо складати (включно)
-
-console.log(Number.isInteger(getNumberM)); //чи є передане значення M ЦІЛИМ числом
-
-let isEvenPass = confirm("To pass event?"); //чи потрібно пропускати парні числа
-console.log(isEvenPass);
 
 //цикл, який буде складати числа від раніше отриманих N и M
 

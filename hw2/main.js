@@ -10,6 +10,23 @@ console.log(Number.isInteger(getNumberM)); //чи є передане значе
 let isEvenPass = confirm("To pass event?"); //чи потрібно пропускати парні числа
 console.log(isEvenPass);
 
+let result = 0;
+let test = [];
+
+for (let i = 1; i <= (getNumberN && getNumberM); i++) {
+    if (isEvenPass === true) {
+        function even_or_odd(i) {
+            return i % 2 === 0 ? "Odd" : "Even"
+        }
+            if(even_or_odd(i) === "Odd") {
+                result += (i - (i % 2 == 0))
+            }
+    } else {
+        result += i;
+    }
+};
+
+console.log(result);
 /* 
 const product =  prompt('What do You want to buy?');
 

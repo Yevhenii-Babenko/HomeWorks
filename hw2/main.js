@@ -7,14 +7,18 @@ let getNumberM = Number(prompt("Put your number M here", "Number M")); //Отр�
 
 console.log(Number.isInteger(getNumberM)); //чи є передане значення M ЦІЛИМ числом
 
-let isEvenPass = confirm("To pass event?"); //чи потрібно пропускати парні числа
+const isEvenPass = confirm("To pass event?"); //чи потрібно пропускати парні числа
 console.log(isEvenPass);
 
 let result = 0;
 let test = [];
 
-for (let i = 1; i <= (getNumberN && getNumberM); i++) {
-    if (isEvenPass === true) {
+for (let i = getNumberN; i <= getNumberM; i++) {
+    if (isEvenPass && i % 2 === 0) {
+        result += (i - (i % 2 == 0))
+    }
+    result += 1;
+    /* if (isEvenPass === true) {
         function even_or_odd(i) {
             return i % 2 === 0 ? "Odd" : "Even"
         }
@@ -23,11 +27,11 @@ for (let i = 1; i <= (getNumberN && getNumberM); i++) {
             }
     } else {
         result += i;
-    }
+    } */
 };
 
 console.log(result);
-/* 
+/*
 const product =  prompt('What do You want to buy?');
 
 if (product === "bread") {
@@ -39,7 +43,7 @@ if (product === "bread") {
         alert(`You can not buy ${parseInt(amountOfBread)} bread!`)
     } else {
         const currency = prompt("which currency?");
-    
+
         if(currency === 'uah') {
             alert(`You need to pay ${parseInt(amountOfBread) * parseInt(priceOfBread)} uah`);
         } else if (currency === 'usd') {
@@ -47,8 +51,8 @@ if (product === "bread") {
         } else {
             alert('please, choose correct currensy')
         }
-    }    
-} 
+    }
+}
 */
 /*
 const day = prompt("question?");
@@ -127,7 +131,7 @@ do {
 if (attempts >= 3) {
     alert('end')
 } else {
-    alert('win'); 
+    alert('win');
 }
 console.log("correct")
 */
@@ -153,7 +157,7 @@ let counter = 0;
 
 for(let i = 0; i < text.length; i++) {
     const char = text.charAt(i);
-    
+
     if (char === letter) {
         counter++;
     }
@@ -162,7 +166,7 @@ for(let i = 0; i < text.length; i++) {
 if (counter === 0) {
     console.log(`Symbol ${letter} is not exist in : ${text}`);
 } else {
-    console.log(`${counter} symbols ${letter} in the text`); 
+    console.log(`${counter} symbols ${letter} in the text`);
 }
 */
 
@@ -210,7 +214,7 @@ const currentCurrency = currency ? currency : "usd";
 document.writeln(currentCurrency); */
 
 /* const waffles = true;
-const jam = true; 
+const jam = true;
 
 const wafflesJam = waffles && jam;
 if(waffles && jam) {

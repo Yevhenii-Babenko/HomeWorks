@@ -1,108 +1,123 @@
-/**
- * It will print cities to the console
- * @param {string[]} cities cities of Ukraine 
- */
-
-/* function printCities(cities) {
-    for (let index = 0; index < cities.length; index++) {
-        const city = cities[index];
-        const fisrstLetter = city[0].toUpperCase();
-        const remainder = city.slice(1);
-        cities[index] = `${fisrstLetter}${remainder}`
-    }
-    
-    console.log(cities.join(', '));
-}
-
-const cities = ['kyiv', 'lviv', 'odessa'] 
-
-printCities(cities)
-
-for (const city of cities) {
-    if (city === 'kyiv') {
-        console.log('Prices are crazy');
-    }
-} */
-/* const newArray = new Array(1,2);
-
-if (newArray && newArray.length) {
-    console.log('Array is not empty');
-}
+const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
+const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
+const marks = [4, 5, 5, 3, 4, 5];
 
 
-const listOfT = ['Clark', 'Bill', 'Bob', 'Sem']
+document.writeln('All the tasks of this homework are shown into console --->')
 
-listOfT.pop()
-console.log(listOfT) */
+//1 task Розділіть студентів на пари(хлопець + дівчина) для работи над проєктом. У вас повинен вийти вкладений масив з парами студентів: [["Олександр", "Олена"], [..], [...]];
 
-/* function getNumber(amount) {
-    const numbers = [];
+function getPairs(pairs) {
+    let menNames = [];
+    let womenNames = [];
+    let coupleOne = [];
+    let coupleTwo = [];
+    let coupleThree = [];
 
-    for (let index = 0; index < amount; index++){
-        const input = prompt('Enter a number');
-        const number = Number.parseInt(input);
-        numbers.push(number);
-    }
-    return numbers
-}
-
-function getMax(numbers) {
-    let max = numbers[0]
-
-    for (let index = 0; index < numbers.length; index++) {
-        const number = numbers[index];
-
-        if (number > max) {
-            max = number;
+    for (let index = 0; index < pairs.length; index++) {
+        if (pairs[index] === pairs[0]) {
+            menNames.push(pairs[0]);
+        } else if (pairs[index] === pairs[1]) {
+            menNames.push(pairs[1]);
+        } else if (pairs[index] === pairs[2]) {
+            womenNames.push(pairs[2]);
+        } else if (pairs[index] === pairs[3]) {
+            womenNames.push(pairs[3]);
+        } else if (pairs[index] === pairs[4]) {
+            menNames.push(pairs[4]);
+        } else {
+            womenNames.push(pairs[5]);
         }
     }
+
+    coupleOne.push(menNames[0], womenNames[0]);
+    coupleTwo.push(menNames[1], womenNames[1]);
+    coupleThree.push(menNames[2], womenNames[2]);
+
+    function putCoupleToArray(one, two, fhree) {
+        let getOurPairs = [];
+        getOurPairs.push(one, two, fhree);
+        return getOurPairs
+    }
+
+    return putCoupleToArray(coupleOne, coupleTwo, coupleThree);
 }
 
-const numbers = getNumber(3);
-const max = getNumber(numbers);
+console.log(`This fuction shows an array with sorted couple of students: ${getPairs(students)}`);
 
-console.log(numbers);
-console.log(max); */
-/* 
-const str = 'uk,en,su';
-const arrayLang = str.split(',');
-const reverseArray = arrayLang.reverse()
+ 
+//2 task Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати. Повинен вийти вкладений масив виду: [["Олександр і Олена", "Теорія автоматів"], [...], [...]]
 
-console.log(arrayLang);
+function getPairsAndThemes (array1, array2) {
+    let studentsCople = [];
+    let themesForEachPair = [];
+    const result = [];
 
-const joinedStr = arrayLang.join(',');
-console.log(joinedStr); */
-/* 
-let a = [55];
-let b = a;
+    studentsCople = Array.from(getPairs(array1));
+    themesForEachPair = Array.from(array2);
 
-a.push(123);
-b.push(43);
+    const firstPair = studentsCople[0];
+    const secondPair = studentsCople[1];
+    const thirdPair = studentsCople[2];
+    
+    const arr1 = new Array(firstPair.join(' i '), themesForEachPair[0])
+    const arr2 = new Array(secondPair.join(' i '), themesForEachPair[1])
+    const arr3 = new Array(thirdPair.join(' i '), themesForEachPair[2])
 
-console.log(a);
-console.log(b); */
-
-const creatures = ['elf', 'ogre', 'dwarf'];
-
-if(creatures.includes('ogre')){
-    console.log('AAAA, ogre!')
+    result.push(arr1, arr2, arr3)
+    //console.log(result)
+    return result
 }
 
-function kill(creatures){
-    const index = creatures.indexOf(creatures);
-    creatures.slice(index, 1)
+console.log(`This function matches pairs of previous task with subject themes:  ${getPairsAndThemes(students, themes)}`)
+
+
+//3 task Зіставте оцінки(marks) зі студентом(students): [["Саша", 4], [...], [...]]
+function putMarksForStudent(array1, array2) {
+    let evaluationArray = [];
+    //let marksAndStudents = [];
+   /*  for (let index = 0; index < (array1.length && array2.length); index++) {
+        evaluationArray.push(array1[index], array2[index]);
+        return marksAndStudents
+    }
+
+    console.log(evaluationArray) */
+
+    const arr1 = [array1[0], array2[0]];
+    const arr2 = [array1[1], array2[1]];
+    const arr3 = [array1[2], array2[2]];
+    const arr4 = [array1[3], array2[3]];
+    const arr5 = [array1[4], array2[4]];
+    const arr6 = [array1[5], array2[5]];
+    evaluationArray.push(arr1, arr2, arr3, arr4, arr5, arr6);
+
+    //console.log(evaluationArray);
+
+    /* for (let index = 0; index < (array1.length && array2.length); index++){
+        marksAndStudents[index] = (array1[index] + array2[index]);
+        //return marksAndStudents;
+    }
+    console.log(marksAndStudents); */
+    return evaluationArray
 }
 
-kill('ogre');
+console.log(`This function matches single student's name with an array of marks: ${putMarksForStudent(students, marks)}`)
 
-console.log(creatures);
+//4 task Поставте кожній парі випадкову оцінку(від 1 до 5) за проєкт(тут функція буде нечистою, але не повинна мутувати массив): [["Олександр і Олена", "Теорія автоматів", 5], [...], [...]]
 
-const squad = creatures.concat('wizard', 'hobbit');
-
-const temp = ['frodo', 'lea'];
-
-const squad1 = [].concat(temp);
-
-temp.push('borat')
-
-console.log(squad, squad1, temp)
+function randomMark (array1, array2) {
+    
+    let ourResult = [];
+    let randomMArk = Math.floor(Math.random() * array2.length);
+    
+    for (let index = 0; index < array1.length; index++) {
+        ourResult.push(array1[index]);
+        if (randomMArk != 0) {
+            ourResult[index].push(randomMArk);
+        } else {
+            ourResult[index].push(randomMArk + 1);
+        }
+    }
+    return ourResult;
+}
+console.log(`This function marks random avaluation for student's couples ${(randomMark(getPairsAndThemes(students, themes), marks)).join(', ')}`)

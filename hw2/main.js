@@ -8,26 +8,15 @@ let getNumberM = Number(prompt("Put your number M here", "Number M")); //Отр�
 console.log(Number.isInteger(getNumberM)); //чи є передане значення M ЦІЛИМ числом
 
 const isEvenPass = confirm("To pass event?"); //чи потрібно пропускати парні числа
-console.log(isEvenPass);
+console.log('skip even number', isEvenPass);
 
 let result = 0;
 let test = [];
 
 for (let i = getNumberN; i <= getNumberM; i++) {
     if (isEvenPass && i % 2 === 0) {
-        result += (i - (i % 2 == 0))
-    }
-    result += 1;
-    /* if (isEvenPass === true) {
-        function even_or_odd(i) {
-            return i % 2 === 0 ? "Odd" : "Even"
-        }
-            if(even_or_odd(i) === "Odd") {
-                result += (i - (i % 2 == 0))
-            }
-    } else {
-        result += i;
-    } */
+        continue
+    } result += 1;
 };
 
 console.log(result);

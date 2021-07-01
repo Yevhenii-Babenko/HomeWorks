@@ -27,7 +27,7 @@ function getRandomArray(length, min, max) {
  */
     return randomNumArr
 }
-document.writeln(`<div style="color:green; margin: 50px 20px">Завдання№1: Тут ми можемо бачити результати фінкції getRandomArray() ${getRandomArray(7, 3, 50)}</div><br>`)
+document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завдання№1: Тут ми можемо бачити результати фінкції getRandomArray() ${getRandomArray(7, 3, 50)}</p></div>`)
 
 /*5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5] */
@@ -45,7 +45,7 @@ function filterEvenNumbers(...numbers) {
 
 filterEvenNumbers(1, 2, 4, 5, 6)
 
-
+document.writeln(`<div style="color:blue; margin: 50px 20px"><p>Завдання№5: Тут ми можемо бачити результати фінкції filterEvenNumbers() ${filterEvenNumbers(1, 2, 4, 5, 6, 11, 12, 15, 16, 17, 19, 20)}</p></div>`)
 
 
 

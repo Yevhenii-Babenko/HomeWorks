@@ -29,6 +29,15 @@ function getRandomArray(length, min, max) {
 }
 document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завдання№1: Тут ми можемо бачити результати фінкції getRandomArray() ${getRandomArray(7, 3, 50)}</p></div>`)
 
+/* Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+Приклад: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4 */
+
+/* function getAverage(...numbers) {
+    const getArr = [...numbers];
+    if(getArr != )
+} */
+
+
 /*5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5] */
 

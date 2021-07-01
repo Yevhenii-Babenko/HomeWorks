@@ -1,12 +1,49 @@
 //HW5: Arrays Methods
 
 /* 1. Створіть функцію getRandomArray(length, min, max) – яка повертає масив випадкових цілих чисел. У функції є параметри: length - довжина масиву, min – мінімальне значення цілого числа, max – максимальне значення цілого числа. Приклад: getRandomArray(15, 1, 100) –> [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2] */
-
-
+/**
+ * 
+ * @param {*} length 
+ * @param {*} min 
+ * @param {*} max 
+ * @returns randomNumArr
+ */
 function getRandomArray(length, min, max) {
-    let RandomArray = [];
+    let randomNumArr = [];
+    /* let randomNumb = function getRandomInRange(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    } */
+    //randomNumArr.push(Math.floor(Math.random() * (max - min + 1) + min));
+    for(let index = 0; index < length; index++){
+        const element = length[index];
+        randomNumArr.push(Math.floor(Math.random() * (max - min + 1) + min));
+    }
+    /* for(num of randomNumArr) {
+        randomNumArr.push(num)
+    } */
+    /* for (let index = 0; index < length; index++) {
+        return console.log(randomNumArr.push(randomNumb(min, max)))
+    }
+ */
+    return randomNumArr
+}
+document.writeln(`<div style="color:green; margin: 50px 20px">Завдання№1: Тут ми можемо бачити результати фінкції getRandomArray() ${getRandomArray(7, 3, 50)}</div><br>`)
+
+/*5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
+Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5] */
+
+/**
+ * 
+ * @param  {...any} numbers 
+ * @returns 
+ */
+function filterEvenNumbers(...numbers) {
+    const   getArr= [...numbers];
+    const filtered = getArr.filter(element => element % 2 === 0)
+    return  filtered
 }
 
+filterEvenNumbers(1, 2, 4, 5, 6)
 
 
 
@@ -185,7 +222,7 @@ function some(arr, callback1) {
         if(callback(element, index, arr)) {
             return false
         }
-        
+
         return true
     }
 }
@@ -228,7 +265,7 @@ function callback2(accum, currectElement, index, target) {
     } else {
         accum[currectElement.age].push(current.name)
     }
-    return accum   
+    return accum
 }
 
 function callback3(prevSum, element) {
@@ -274,7 +311,7 @@ function callback4(a, b) {
 }
  */
 /* const string = ['400', '14', '2'];
- 
+
 string.sort(callback4);
 
 console.log(string) */

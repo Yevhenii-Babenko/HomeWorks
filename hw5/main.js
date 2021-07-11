@@ -8,35 +8,23 @@
  * @param {*} max 
  * @returns randomNumArr
  */
-function getRandomArray(length, min, max) {
-    let randomNumArr = [];
-    /* let randomNumb = function getRandomInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min)
-    } */
-    //randomNumArr.push(Math.floor(Math.random() * (max - min + 1) + min));
+const getRandomArray = (length, min, max) => {
+    let randomNumArr = new Array;
     for(let index = 0; index < length; index++){
         const element = length[index];
         randomNumArr.push(Math.floor(Math.random() * (max - min + 1) + min));
     }
-    /* for(num of randomNumArr) {
-        randomNumArr.push(num)
-    } */
-    /* for (let index = 0; index < length; index++) {
-        return console.log(randomNumArr.push(randomNumb(min, max)))
-    }
- */
     return randomNumArr
 }
-document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завдання№1: Тут ми можемо бачити результати фінкції getRandomArray() ${getRandomArray(7, 3, 50)}</p></div>`)
+document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завдання№1: Тут ми можемо бачити результати фінкції getRandomArray(7, 3, 50) result: ${getRandomArray(7, 3, 50)}</p></div>`)
 
-/* Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
+/*3. Створіть функцію getAverage(...numbers) – яка рахує середнє арифметичне всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 Приклад: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4 */
 
 /* function getAverage(...numbers) {
     const getArr = [...numbers];
     if(getArr != )
 } */
-
 
 /*5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5] */
@@ -48,13 +36,19 @@ document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завданн�
  */
 //function 
 const filterEvenNumbers = (...numbers) => [...numbers].filter(e => e % 2 === 0);
-
-
 filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10)
+document.writeln(`<div style="color:blue; margin: 50px 20px"><p>Завдання№5: Тут ми можемо бачити результати фінкції filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10) result: ${filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10)}</p></div>`)
 
-document.writeln(`<div style="color:blue; margin: 50px 20px"><p>Завдання№5: Тут ми можемо бачити результати фінкції filterEvenNumbers() ${filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10)}</p></div>`)
+/* 6. Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
+Приклад: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3 */
+const countPositiveNumbers = (...numbers) => [...numbers].filter(e => e > 0).reduce((a, b) => a + b, 0);
+document.writeln(`<div style="color:gray; margin: 50px 20px"><p>Завдання№6: Тут ми можемо бачити результати фінкції countPositiveNumbers(-1, -4, 0, 1, -2, 4, -5, 6, 8, 7, 10, 40, -54, 34, -56) result: ${countPositiveNumbers(-1, -4, 0, 1, -2, 4, -5, 6, 8, 7, 10, 40, -54, 34, -56)}</p></div>`)
 
+/* 7. Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
+Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55] */
 
+const getDividedByFive = (...numbers) => [...numbers].filter(e => e  % 5 === 0);
+document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завдання№7: Тут ми можемо бачити результати фінкції getDividedByFive(1, 2, 3, 4, 5, 10, 20, 25, 12, 14, 16) result: ${getDividedByFive(1, 2, 3, 4, 5, 10, 20, 25, 12, 14, 16)}</p></div>`)
 
 
 

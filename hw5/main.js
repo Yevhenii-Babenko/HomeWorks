@@ -46,15 +46,13 @@ document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завданн�
  * @param  {...any} numbers 
  * @returns 
  */
-function filterEvenNumbers(...numbers) {
-    const   getArr= [...numbers];
-    const filtered = getArr.filter(element => element % 2 === 0)
-    return  filtered
-}
+//function 
+const filterEvenNumbers = (...numbers) => [...numbers].filter(e => e % 2 === 0);
 
-filterEvenNumbers(1, 2, 4, 5, 6)
 
-document.writeln(`<div style="color:blue; margin: 50px 20px"><p>Завдання№5: Тут ми можемо бачити результати фінкції filterEvenNumbers() ${filterEvenNumbers(1, 2, 4, 5, 6, 11, 12, 15, 16, 17, 19, 20)}</p></div>`)
+filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10)
+
+document.writeln(`<div style="color:blue; margin: 50px 20px"><p>Завдання№5: Тут ми можемо бачити результати фінкції filterEvenNumbers() ${filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10)}</p></div>`)
 
 
 

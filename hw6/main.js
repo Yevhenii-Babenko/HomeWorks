@@ -35,14 +35,22 @@ function getSubjects(arr){
     return keys
 }
 const result = getSubjects(subjects);
-console.log(result)
-
 document.writeln(`<p style="margin:0; padding:0"> Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
 Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл</p> <br> 
 <p style="margin:0; padding:0; color:green">Результат виклику функції getSubjects() : ${result}</p>`)
+/* 
+2. Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у попередніх домашніх завданнях :) 
+*/
+const marks = Object.values(subjects)
+// .map(a => a.join());
+console.log(marks);
+const newArr = marks.flatMap(x => x).reduce((a,b) => a + b)
+console.log(newArr);
 
-/* console.log(subjects);
-console.log(keys); */
+/* const averageMark = getAverageMark(); */
+
+
+
 
 
 

@@ -24,6 +24,30 @@ const students = [{
     }
   }];
 
+/* 
+1. Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
+Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* const userName = new Object()
 userName.name = 'Jogh';
 userName.age = 35;

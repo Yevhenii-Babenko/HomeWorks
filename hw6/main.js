@@ -28,10 +28,21 @@ const students = [{
 1. Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
 Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл
 */
+const { subjects } = students[0];
 
+function getSubjects(arr){
+    const keys = Object.keys(arr).map(a => a.slice(0,1).toUpperCase() + a.slice(1));
+    return keys
+}
+const result = getSubjects(subjects);
+console.log(result)
 
+document.writeln(`<p style="margin:0; padding:0"> Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
+Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл</p> <br> 
+<p style="margin:0; padding:0; color:green">Результат виклику функції getSubjects() : ${result}</p>`)
 
-
+/* console.log(subjects);
+console.log(keys); */
 
 
 

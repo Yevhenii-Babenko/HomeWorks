@@ -53,32 +53,36 @@ document.writeln(`<p style="margin:0; padding:0">2. Створіть функц�
 /*
 3. Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). Повинна бути виведена інформація: курс, ім'я, середня оцінка. 
 */
-/* const { name, course } = students[0];
 
-const obj5 = {
-    course,
-    name
-}
-console.log(obj5);
-console.log(name, course, getAverageMark(marks)) */
+let selectedStudFromArr = students[2];
+console.log(selectedStudFromArr)
 function getStudentInfo(selectedStud) {
     let obj = {};
-    for (let i = 0; i < selectedStud.length; i++) {
-        let { name, course, subjects} = selectedStud[i];
+    let key = Object.values(selectedStud.subjects);
+
+    console.log(key);
+    
+    /* for (let i = 0; i < selectedStud.length; i++) {
+        let { name, course } = selectedStud[i];
         obj = {
             course,
             name
         }
-    };
+    }; */
     let obj1 = {
         ...obj,
-        averageMark: getAverageMark(Object.values(selectedStud[2].subjects))
+        averageMark: getAverageMark(key)
     };
     return obj1
 }
-console.log(getStudentInfo(students))
+
+console.log(getStudentInfo(selectedStudFromArr))
+
+document.writeln(`<p style="margin:0; padding:0">3. 
+Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому
+студенту (вам знадобиться функція з попереднього завдання). Повинна бути виведена інформація: курс, ім'я, середня оцінка. Результат виклику функції getStudentInfo() : ${getStudentInfo(selectedStudFromArr)}</p><br>`);
 /* 
-4. Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку. 
+4. Створіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку. 
 */
 
 function getStudentsNames(arr) {

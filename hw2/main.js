@@ -16,7 +16,7 @@ let test = [];
 for (let i = getNumberN; i <= getNumberM; i++) {
     if (isEvenPass && i % 2 === 0) {
         continue
-    } result += 1;
+    } result += i;
 };
 
 console.log(result);

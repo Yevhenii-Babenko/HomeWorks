@@ -62,20 +62,19 @@ const obj5 = {
 console.log(obj5);
 console.log(name, course, getAverageMark(marks)) */
 function getStudentInfo(selectedStud) {
+    let obj = {};
     for (let i = 0; i < selectedStud.length; i++) {
-        let { name, course } = selectedStud[i];
-        let obj = {
+        let { name, course, subjects} = selectedStud[i];
+        obj = {
             course,
             name
         }
-        return obj
     };
-    let some = Object.values(selectedStud.subjects)
     let obj1 = {
         ...obj,
-        averageMark: getAverageMark(some)
+        averageMark: getAverageMark(Object.values(selectedStud[2].subjects))
     };
-    return console.log(obj1)
+    return obj1
 }
 console.log(getStudentInfo(students))
 /* 

@@ -35,7 +35,7 @@ function getSubjects(arr){
     return keys
 }
 const result = getSubjects(subjects);
-document.writeln(`<p style="margin:0; padding:0"> Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
+document.writeln(`<p style="margin:0; padding:0">1. Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента.
 Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл</p> <br> 
 <p style="margin:0; padding:0; color:green">Результат виклику функції getSubjects() : ${result}</p><br>`)
 /* 
@@ -46,14 +46,36 @@ function getAverageMark(arr) {
     return (arr
         .flatMap(x => x).reduce((a,b) => a + b, 0) / arr.flatMap(x => x).length).toFixed(2);
 }
-document.writeln(`<p style="margin:0; padding:0"> Створіть функцію getAverageMark(students[0]) --> 3.79 – 
+document.writeln(`<p style="margin:0; padding:0">2. Створіть функцію getAverageMark(students[0]) --> 3.79 – 
 яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку.
 Можна використовувати функції, написані у попередніх домашніх завданнях :) </p> <br> 
-<p style="margin:0; padding:0; color: #ED4C5C">Результат виклику функції getAverageMark() : ${getAverageMark(marks)}</p><br>`)
+<p style="margin:0; padding:0; color: #ED4C5C">Результат виклику функції getAverageMark() : ${getAverageMark(marks)}</p><br>`);
 
+/*
+3. Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). Повинна бути виведена інформація: курс, ім'я, середня оцінка. 
+*/
 
+function getStudentInfo(selectedStud) {
+    
+}
 
+/* 
+4. Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку. 
+*/
 
+function getStudentsNames(arr) {
+    return arr.map(x => x.name).sort((a,b) => a.localeCompare(b));
+}
+// console.log(getStudentsNames(students));
+document.writeln(`<p style="margin:0; padding:0">4. Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку</p> <br> 
+<p style="margin:0; padding:0; color: #097961">Результат виклику функції getStudentsNames() : ${getStudentsNames(students)}</p><br>`);
+/* 
+5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки. 
+*/
+
+/*
+6. Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень. 
+*/
 
 
 

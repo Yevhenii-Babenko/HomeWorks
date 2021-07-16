@@ -92,13 +92,30 @@ document.writeln(`<p style="margin:0; padding:0">4. Ствроіть функц�
 /*
 5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
 */
-
+function getBestStudent(arr) {
+    const marksRating = Object.values(arr)
+    console.log(marksRating)
+}
+getBestStudent(students)
 /*
 6. Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень.
 */
 
+const str = 'тест'
+function calculateWordLetters(word) {
+    return JSON.stringify(word.split('').reduce((acc, item) => {
+        if (acc[item]) {
+            ++acc[item];
+        } else {
+            acc[item] = 1;
+        }
+        return acc
+    }, {}))
+}
 
-
+console.log(calculateWordLetters(str))
+document.writeln(`<p style="margin:0; padding:0">6.  Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень.</p><br>
+ <p style="margin:0; padding:0; color: #097961">Результат виклику функції calculateWordLetters("тест") : ${calculateWordLetters(str)}</p>`);
 
 
 

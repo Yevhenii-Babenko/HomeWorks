@@ -43,8 +43,7 @@ document.writeln(`<p style="margin:0; padding:0">1. Створіть функц�
 */
 const marks = Object.values(subjects)
 function getAverageMark(arr) {
-    return (arr
-        .flatMap(x => x).reduce((a,b) => a + b, 0) / arr.flatMap(x => x).length).toFixed(2);
+    return (arr.flatMap(x => x).reduce((a,b) => a + b, 0) / arr.flatMap(x => x).length).toFixed(2);
 }
 document.writeln(`<p style="margin:0; padding:0">2. Створіть функцію getAverageMark(students[0]) --> 3.79 – 
 яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку.
@@ -54,11 +53,31 @@ document.writeln(`<p style="margin:0; padding:0">2. Створіть функц�
 /*
 3. Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). Повинна бути виведена інформація: курс, ім'я, середня оцінка. 
 */
+/* const { name, course } = students[0];
 
-function getStudentInfo(selectedStud) {
-    
+const obj5 = {
+    course,
+    name
 }
-
+console.log(obj5);
+console.log(name, course, getAverageMark(marks)) */
+function getStudentInfo(selectedStud) {
+    for (let i = 0; i < selectedStud.length; i++) {
+        let { name, course } = selectedStud[i];
+        let obj = {
+            course,
+            name
+        }
+        return obj
+    };
+    let some = Object.values(selectedStud.subjects)
+    let obj1 = {
+        ...obj,
+        averageMark: getAverageMark(some)
+    };
+    return console.log(obj1)
+}
+console.log(getStudentInfo(students))
 /* 
 4. Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку. 
 */

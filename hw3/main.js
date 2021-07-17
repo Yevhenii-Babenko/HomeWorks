@@ -10,28 +10,28 @@ function getMaxDigit(number) {
 //2.Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл
 
 let powerOfNunber = function(number, power) {
+    let result;
     for (let i = 0; i < power; i++) {
-        let result = number;
-        return  result *= power;
+        result = number;
     }
+    return  result *= power;
 }
 
 //3.Створити функцію, яка форматує ім'я, роблячи першу букву великою. ("влад" -> "Влад", "вЛАД" -> "Влад" і так далі);
 
 let firtsLetterToUpperCase = function (name) {
-    let result = name;
-    return result[0].toUpperCase() +  result.slice(1).toLowerCase();
+    return name[0].toUpperCase() +  name.slice(1).toLowerCase();
 }
 
 //4.Створити функцію, яка вираховує суму, що залишається після оплати податку від зарабітньої плати. (Податок = 18% + 1.5% -> 19.5%). Приклад: 1000 -> 805
 let pureSalary = function(amount, fee) {
-    return (amount -= (amount * (fee /100)));
+    return (amount -= (amount * (fee / 100)));
 }
 
 //5.Створити функцію, яка повертає випадкове ціле число в діапазоні від N до M. Приклад: getRandomNumber(1, 10) -> 5
 
 let getRandomNumber = function(n, m) {
-    return Math.floor(n + Math.random() * m);
+    return Math.floor(Math.random() * (m - n + 1) + n)
 }
 
 //6. Створити функцію, яка рахує скільки разів певна буква повторюється в слові. Приклад: countLetter("а", "Асталавіста") -> 4
@@ -46,8 +46,8 @@ let countLetter = function(letter, phrase) {
     return counter;
 }
 
-document.writeln(`Функція №1: ${getMaxDigit(569)}; Функція №2: ${powerOfNunber(2, 3)}; Функція №3: ${firtsLetterToUpperCase('вЛаД')};
-Функція №4: ${pureSalary(1500, 19.5)}; Функція №5: ${getRandomNumber(5, 20)}; Функція №6: ${countLetter('m', 'madam')}`);
+document.writeln(`Функція №1: ${getMaxDigit(569)}; Функція №2: ${powerOfNunber(4, 18)}; Функція №3: ${firtsLetterToUpperCase('вЛаД')};
+Функція №4: ${pureSalary(1500, 19.5)}; Функція №5: ${getRandomNumber(3, 5)}; Функція №6: ${countLetter('m', 'madam')}`);
 
 
 /* function getDay() {

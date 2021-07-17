@@ -55,27 +55,16 @@ document.writeln(`<p style="margin:0; padding:0">2. Створіть функц�
 */
 
 let selectedStudFromArr = students[2];
-// console.log(selectedStudFromArr)
 function getStudentInfo(selectedStud) {
     let { course, name } = selectedStud;
     let key = Object.values(selectedStud.subjects);
-    /* console.log(key); */
-    /* for (let i = 0; i < selectedStud.length; i++) {
-        let { name, course } = selectedStud[i];
-        obj = {
-            course,
-            name
-        }
-    }; */
+   
     return JSON.stringify({
         course,
         name,
         averageMark: getAverageMark(key)
     });
 }
-
-console.log(getStudentInfo(selectedStudFromArr));
-
 document.writeln(`<p style="margin:0; padding:0">3. 
 Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому
 студенту (вам знадобиться функція з попереднього завдання). Повинна бути виведена інформація: курс, ім'я, середня оцінка. Результат виклику функції getStudentInfo() : ${getStudentInfo(selectedStudFromArr)}</p><br>`);
@@ -86,21 +75,25 @@ document.writeln(`<p style="margin:0; padding:0">3.
 function getStudentsNames(arr) {
     return arr.map(x => x.name).sort((a, b) => a.localeCompare(b));
 }
-// console.log(getStudentsNames(students));
 document.writeln(`<p style="margin:0; padding:0">4. Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку</p> <br> 
 <p style="margin:0; padding:0; color: #097961">Результат виклику функції getStudentsNames() : ${getStudentsNames(students)}</p><br>`);
 /*
 5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
 */
 function getBestStudent(arr) {
-    const marksRating = Object.values(arr)
-    console.log(marksRating)
+    const studObj=  arr.map(student => ({
+        name: student.name,
+        marks: getAverageMark(Object.values(student.subjects)),
+    }))
+    return studObj;
 }
+
+console.log(getBestStudent(students))
 getBestStudent(students)
+
 /*
 6. Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень.
 */
-
 const str = 'тест'
 function calculateWordLetters(word) {
     return JSON.stringify(word.split('').reduce((acc, item) => {
@@ -112,8 +105,6 @@ function calculateWordLetters(word) {
         return acc
     }, {}))
 }
-
-console.log(calculateWordLetters(str))
 document.writeln(`<p style="margin:0; padding:0">6.  Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень.</p><br>
  <p style="margin:0; padding:0; color: #097961">Результат виклику функції calculateWordLetters("тест") : ${calculateWordLetters(str)}</p>`);
 

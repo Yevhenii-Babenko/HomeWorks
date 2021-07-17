@@ -81,7 +81,7 @@ document.writeln(`<p style="margin:0; padding:0">4. Ствроіть функц�
 5. Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки.
 */
 function getBestStudent(arr) {
-    const studObj=  arr.map(student => ({
+    const studObj = arr.map(student => ({
         name: student.name,
         marks: getAverageMark(Object.values(student.subjects)),
     }))

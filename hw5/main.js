@@ -33,7 +33,7 @@ function getMedian(...numbers) {
     const middle = (numbers.length + 1) / 2;
     const sorted = numbers.sort((a, b) => a - b);
     const isEven = sorted.length % 2 === 0;
-    return Math.floor(isEven  ? (sorted[middle - 1.5] + sorted[middle - 0.5]) / 2 : sorted[middle - 1]);
+    return isEven  ? (sorted[middle - 1.5] + sorted[middle - 0.5]) / 2 : sorted[middle - 1];
 }
 
 document.writeln(`<div style="color:#A8EB12; margin: 50px 20px"><p>Завдання№4: Тут ми можемо бачити результати фінкції getMedian(2, 3, 3, 6, 7, 10, 11) result: ${getMedian(2, 3, 3, 6, 7, 10, 11)}</p></div>`)

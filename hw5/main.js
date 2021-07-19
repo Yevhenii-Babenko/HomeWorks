@@ -22,7 +22,7 @@ document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завданн�
 Приклад: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4 */
 
 function getAverage(...numbers) {
-    return (numbers.filter(num => num === parseInt(num)).reduce(((a,b) => a + b)) / numbers.filter(num => num === parseInt(num)).length).toFixed(2);
+    return (numbers.filter(num => num === parseInt(num)).reduce(((a, b) => a + b)) / numbers.filter(num => num === parseInt(num)).length).toFixed(2);
 }
 document.writeln(`<div style="color:#00008B; margin: 50px 20px"><p>Завдання№3: Тут ми можемо бачити результати фінкції getAverage(1, 2, 3, 4, 5, 6, 7, 8, 6.6, 4.1, 3.1, 10, 11, 13, 15, 18, 19, 20.1, 19.4, 19.6) result: ${getAverage(1, 2, 3, 4, 5, 6, 7, 8, 6.6, 4.1, 3.1, 10, 11, 13, 15, 18, 19, 20.1, 19.4, 19.6)}</p></div>`)
 
@@ -32,11 +32,11 @@ document.writeln(`<div style="color:#00008B; margin: 50px 20px"><p>Завдан�
 function getMedian(...numbers) {
     const middle = (numbers.length + 1) / 2;
     const sorted = numbers.sort((a, b) => a - b);
-    const isEven = sorted % 2 === 0;
-    return isEven ? (sorted[middle - 1.5] + sorted[middle - 0.5]) / 2 : sorted[middle - 1];
+    const isEven = sorted.length % 2 === 0;
+    return Math.floor(isEven  ? (sorted[middle - 1.5] + sorted[middle - 0.5]) / 2 : sorted[middle - 1]);
 }
 
-document.writeln(`<div style="color:#A8EB12; margin: 50px 20px"><p>Завдання№3: Тут ми можемо бачити результати фінкції getAverage(1,2,3,4,5,6,7,8,6.6,4.1,3.1,10,11) result: ${getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}</p></div>`)
+document.writeln(`<div style="color:#A8EB12; margin: 50px 20px"><p>Завдання№4: Тут ми можемо бачити результати фінкції getMedian(...numbers) result: ${getMedian(2, 3, 3, 6, 7, 10, 11)}</p></div>`)
 
 /*5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5] */

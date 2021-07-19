@@ -36,7 +36,7 @@ function getMedian(...numbers) {
     return Math.floor(isEven  ? (sorted[middle - 1.5] + sorted[middle - 0.5]) / 2 : sorted[middle - 1]);
 }
 
-document.writeln(`<div style="color:#A8EB12; margin: 50px 20px"><p>Завдання№4: Тут ми можемо бачити результати фінкції getMedian(...numbers) result: ${getMedian(2, 3, 3, 6, 7, 10, 11)}</p></div>`)
+document.writeln(`<div style="color:#A8EB12; margin: 50px 20px"><p>Завдання№4: Тут ми можемо бачити результати фінкції getMedian(2, 3, 3, 6, 7, 10, 11) result: ${getMedian(2, 3, 3, 6, 7, 10, 11)}</p></div>`)
 
 /*5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5] */

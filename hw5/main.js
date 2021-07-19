@@ -22,19 +22,16 @@ document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завданн�
 Приклад: getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 34.4 */
 
 function getAverage(...numbers) {
-    const arr = [...numbers];
-    const result = arr.filter(e => e === parseInt(e))
-    return result
+    return (numbers.filter(num => num === parseInt(num)).reduce(((a,b) => a + b)) / numbers.filter(num => num === parseInt(num)).length).toFixed(2);
 }
-console.log();
-document.writeln(`<div style="color:#00008B; margin: 50px 20px"><p>Завдання№3: Тут ми можемо бачити результати фінкції getAverage(1,2,3,4,5,6,7,8,6.6,4.1,3.1,10,11) result: ${getAverage(1, 2, 3, 4, 5, 6, 7, 8, 6.6, 4.1, 3.1, 10, 11)}</p></div>`)
+document.writeln(`<div style="color:#00008B; margin: 50px 20px"><p>Завдання№3: Тут ми можемо бачити результати фінкції getAverage(1, 2, 3, 4, 5, 6, 7, 8, 6.6, 4.1, 3.1, 10, 11, 13, 15, 18, 19, 20.1, 19.4, 19.6) result: ${getAverage(1, 2, 3, 4, 5, 6, 7, 8, 6.6, 4.1, 3.1, 10, 11, 13, 15, 18, 19, 20.1, 19.4, 19.6)}</p></div>`)
 
 /*4. Створіть функцію getMedian(...numbers) – яка рахує медіану всіх переданих в неї аргументів. НЕЦІЛІ ЧИСЛА ІГНОРУЮТЬСЯ
 Приклад: getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) –> 23 Приклад: getMedian(1, 2, 3, 4) –> 2.5 Приклад: getMedian(1, 2, 3, 4, 5) –> 3 */
 
 function getMedian(...numbers) {
-    const middle = ([...numbers].length + 1) / 2;
-    const sorted = [...numbers].sort((a, b) => a - b);
+    const middle = (numbers.length + 1) / 2;
+    const sorted = numbers.sort((a, b) => a - b);
     const isEven = sorted % 2 === 0;
     return isEven ? (sorted[middle - 1.5] + sorted[middle - 0.5]) / 2 : sorted[middle - 1];
 }
@@ -50,19 +47,20 @@ document.writeln(`<div style="color:#A8EB12; margin: 50px 20px"><p>Завдан�
  * @returns 
  */
 //function 
-const filterEvenNumbers = (...numbers) => [...numbers].filter(e => e % 2 === 0);
+const filterEvenNumbers = (...numbers) => numbers.filter(e => e % 2 === 0);
 filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10)
 document.writeln(`<div style="color:blue; margin: 50px 20px"><p>Завдання№5: Тут ми можемо бачити результати фінкції filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10) result: ${filterEvenNumbers(1, 2, 4, 5, 6, 8, 7, 10)}</p></div>`)
 
 /* 6. Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0
 Приклад: countPositiveNumbers(1, -2, 3, -4, -5, 6) -> 3 */
-const countPositiveNumbers = (...numbers) => [...numbers].filter(e => e > 0).reduce((a, b) => a + b, 0);
+const countPositiveNumbers = (...numbers) => numbers.filter(element => element > 0).length
+//.reduce((a, b) => a + b, 0);
 document.writeln(`<div style="color:gray; margin: 50px 20px"><p>Завдання№6: Тут ми можемо бачити результати фінкції countPositiveNumbers(-1, -4, 0, 1, -2, 4, -5, 6, 8, 7, 10, 40, -54, 34, -56) result: ${countPositiveNumbers(-1, -4, 0, 1, -2, 4, -5, 6, 8, 7, 10, 40, -54, 34, -56)}</p></div>`)
 
 /* 7. Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55] */
 
-const getDividedByFive = (...numbers) => [...numbers].filter(e => e % 5 === 0);
+const getDividedByFive = (...numbers) => numbers.filter(e => e % 5 === 0);
 document.writeln(`<div style="color:green; margin: 50px 20px"><p>Завдання№7: Тут ми можемо бачити результати фінкції getDividedByFive(1, 2, 3, 4, 5, 10, 20, 25, 12, 14, 16) result: ${getDividedByFive(1, 2, 3, 4, 5, 10, 20, 25, 12, 14, 16)}</p></div>`)
 
 

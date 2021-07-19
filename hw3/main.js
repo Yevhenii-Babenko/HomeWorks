@@ -9,12 +9,12 @@ function getMaxDigit(number) {
 
 //2.Створити функцію, яка визначає ступінь числа. Не використовуючи Math.pow та **. Використовуйте цикл
 
-let powerOfNunber = function(number, power) {
-    let result;
-    for (let i = 0; i < power; i++) {
-        result = number;
+function powerOfNunber(number, power) {
+    let result = number;
+    for (let i = 1; i < power; i++) {
+        result *= number;
     }
-    return  result *= power;
+    return result
 }
 
 //3.Створити функцію, яка форматує ім'я, роблячи першу букву великою. ("влад" -> "Влад", "вЛАД" -> "Влад" і так далі);
@@ -46,7 +46,7 @@ let countLetter = function(letter, phrase) {
     return counter;
 }
 
-document.writeln(`Функція №1: ${getMaxDigit(569)}; Функція №2: ${powerOfNunber(4, 18)}; Функція №3: ${firtsLetterToUpperCase('вЛаД')};
+document.writeln(`Функція №1: ${getMaxDigit(569)}; Функція №2: ${powerOfNunber(2, 24)}; Функція №3: ${firtsLetterToUpperCase('вЛаД')};
 Функція №4: ${pureSalary(1500, 19.5)}; Функція №5: ${getRandomNumber(3, 5)}; Функція №6: ${countLetter('m', 'madam')}`);
 
 

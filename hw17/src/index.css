@@ -11,8 +11,27 @@ body {
   max-width: 600px;
   width: 100%;
   padding: 1%;
+  position: relative;
+ /*  display: flex;
+  gap: 1%; */
+}
+.post-author{
   display: flex;
-  gap: 1%;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.post-container{
+  display: flex;
+  gap: 10px;
+}
+.post-container__header{
+  color: #ffffff;
+  margin: 0;
+}
+.post-container__p{
+  color: gray;
+  margin: 0;
 }
 .author-img{
   width: 50px;
@@ -25,8 +44,23 @@ body {
   width: 100%;
   
 }
-
 .content-img{
+  margin-left: auto;
   object-fit: fill;
-  width: 100%;
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+}
+.post-text{
+  position: absolute;
+  top: 11%;
+  left: 12%;
+}
+.post-text_p{
+  margin: 0;
+  color: #ffffff;
+  font-weight: bold;
+}
+.post-content{
+  margin-bottom: 5%;
 }

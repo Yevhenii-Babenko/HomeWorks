@@ -1,9 +1,10 @@
-import React, { useState, useEffect, step } from 'react';
+import React, { useState } from 'react';
 
-export default function Timer({time, autostart}) {
-    const [timer, setTimer] = useState(time);
-    const [autoRun, setautoRun] = useState(autostart);
+export default function Timer({time, autostart, step}) {
 
+    const [timeLeft, setTimeLeft] = useState(time);
+    const [autoRun, setAutoRun] = useState(autostart);
+    console.log(time, autostart, step)
    /*  useEffect(() => {
         effect
         return () => {
@@ -14,9 +15,19 @@ export default function Timer({time, autostart}) {
     return(
         <React.Fragment>
             <div>
-                <h1> Our counter: {timer} </h1>
-                <button>Start</button>
-                <button>Pause</button>
+                <h1> Time left: {timeLeft} </h1>
+
+                <button onClick={()=> {
+                    setInterval(() => {
+                        setTimeLeft(timeLeft => timeLeft - 1)
+                        }, step)
+                }}>Start</button>
+                <button
+                disabled = { !autoRun &&  timeLeft === 0}
+                onClick={() => {
+                    setAutoRun(false);
+                    setTimeLeft(timeLeft);
+                }} >Pause</button>
             </div>
         </React.Fragment>
     )

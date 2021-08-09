@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TypeColor } from '../../types';
 
 export const ColorList = ({ colors }) => (
   <div>
@@ -18,5 +19,5 @@ export const ColorList = ({ colors }) => (
 );
 
 ColorList.propTypes = {
-  colors: PropTypes.arrayOf().isRequired,
+  colors: PropTypes.arrayOf(TypeColor).isRequired,
 };

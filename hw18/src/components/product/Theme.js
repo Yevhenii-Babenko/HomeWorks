@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { TypeColor } from '../../types';
 
 export const Theme = ({ primaryColor, secondaryColor }) => (
   <div className="Theme">
@@ -14,10 +15,10 @@ export const Theme = ({ primaryColor, secondaryColor }) => (
   </div>
 );
 
-const TypeColor =  PropTypes.shape({
+/* const TypeColor =  PropTypes.shape({
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-});
+}); */
 
 Theme.propTypes = {
   primaryColor: TypeColor.isRequired,

@@ -1,0 +1,28 @@
+[
+    { 
+      "id": "1",
+      "name": "Potato",
+      "color": "red"
+    },
+    { 
+      "id": "2",
+      "name": "Pear",
+      "color": "green"
+    },
+    { 
+      "id": "3",
+      "name": "Mellon",
+      "color": "blue"
+    },
+    { 
+      "id": "4",
+      "name": "Ice cream",
+      "color": "red"
+    },
+    { 
+      "id": "5",
+      "name": "Apple",
+      "color": "green"
+    }
+  ]
+  

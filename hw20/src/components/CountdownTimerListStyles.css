@@ -1,0 +1,29 @@
+.container{
+    max-width: 20rem;
+    width: 100%;
+    margin: 0 auto;
+}
+.timer{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    font-style: italic;
+}
+.timer__display{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.timer__btn{
+    margin-top: 2rem;
+    text-align: center;
+}
+
+button{
+    width: 3.5rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+button:last-child {
+    margin-right: unset;
+}
